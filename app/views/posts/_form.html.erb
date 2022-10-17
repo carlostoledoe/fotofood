@@ -26,6 +26,15 @@
     <%= form.text_field :descrition %>
   </div>
 
+
+    <div>
+    <h4>Tags:</h4>
+    <%= form.fields_for :tags do |a| %>
+      <%= a.label         :name, style: "display: block" %>
+      <%= a.text_field    :name %>
+    <% end %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
