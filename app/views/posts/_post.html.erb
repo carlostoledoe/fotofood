@@ -14,4 +14,14 @@
     <%= post.descrition %>
   </p>
 
+    <p>
+      <strong>Tags:</strong>
+        <% if post.tags.any? %>
+          <% post.tags.each do |q| %>
+            <%= q.name %> 
+          <% end %>
+        <% else %>
+          <p>Sin etiquetas</p>
+        <% end %>
+    </p>
 </div>
