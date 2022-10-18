@@ -21,12 +21,14 @@
     <%= form.text_field :place %>
   </div>
 
-    <div>
+  <div>
     <h4>Tags:</h4>
-    <%= form.fields_for :tags do |a| %>
-      <%= a.label         :name, style: "display: block" %>
-      <%= a.text_field    :name %>
+    <%= form.fields_for :tags do |t| %>
+      <%= render "tag_fields", :f => t %>
     <% end %>
+    <div>
+      <%= link_to_add_association "New tag", form, :tags %>
+    </div>
   </div>
 
   <div>
