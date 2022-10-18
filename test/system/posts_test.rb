@@ -14,7 +14,6 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "New post"
 
-    fill_in "Descrition", with: @post.descrition
     fill_in "Place", with: @post.place
     fill_in "Title", with: @post.title
     click_on "Create Post"
@@ -27,7 +26,6 @@ class PostsTest < ApplicationSystemTestCase
     visit post_url(@post)
     click_on "Edit this post", match: :first
 
-    fill_in "Descrition", with: @post.descrition
     fill_in "Place", with: @post.place
     fill_in "Title", with: @post.title
     click_on "Update Post"
