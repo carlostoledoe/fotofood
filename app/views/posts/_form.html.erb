@@ -32,6 +32,11 @@
   </div>
 
   <div>
+    <% @var = current_user.try(:id) %>
+    <%= form.hidden_field :user_id, value: @var %>
+  </div>
+
+  <div>
     <%= form.submit "Publicar", class: "btn btn-warning mt-4 btn-lg" %>
   </div>
 <% end %>
