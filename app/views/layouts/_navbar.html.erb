@@ -23,8 +23,12 @@
         </li>
       </ul>
       <div>
-          <%= link_to "Botón", root_path, class: "btn btn-primary btn-sm mb-1"  %>
-          <%= link_to "Botón", root_path, class: "btn btn-primary btn-sm mb-1"  %>
+        <% if user_signed_in? %>
+          <%= button_to( "Salir", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" ) %>
+        <% else %>
+          <%= link_to "Regístrate", new_user_registration_path, class: "btn btn-warning btn-sm" %>
+          <%= link_to "Ingresar", new_user_session_path, class: "btn btn-outline-primary btn-sm"  %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -34,3 +38,4 @@
     <button class="btn btn-outline-warning" type="submit">Buscar</button>
   </form>
 <%= image_tag "banner.gif", class: "w-100 mt-3" %>
+<span class="lead colorbrand" >Bienvenido: <%= current_user.email %></span>
