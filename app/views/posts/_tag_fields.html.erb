@@ -1,6 +1,6 @@
 <div class="nested-fields">
-  <%= f.label "Tag" %>
-  <%= f.text_field :name %>
+  <%# f.label "Tag" %>
+  <%= f.text_field :name, placeholder: "ejemplo: amigos" %>
   
-  <%= link_to_remove_association "Delete", f %>  
+  <%= link_to_remove_association "Quitar", f, class: "btn btn-outline-primary btn-sm" %>  
 </div>

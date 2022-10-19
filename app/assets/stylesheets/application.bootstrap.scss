@@ -1,7 +1,20 @@
+//Modificaciones Bootstrap
+$card-bg: #000;
+$card-border-color: #737373;
+$link-color:                              blanchedalmond;
+$link-decoration:                         none;
+$link-hover-color:                         rgb(231, 229, 66);
+$link-hover-decoration:                   none;
+
+
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 body {
   background-color: black;
   color: blanchedalmond;
+}
+
+.colorbrand {
+  color: rgb(231, 229, 66);
 }

@@ -1,22 +1,25 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
 
-  <p>
-    <strong>Place:</strong>
-    <%= post.place %>
-  </p>
+  <div class="card  mb-3" style="width: 12rem;">
+    <%= link_to (image_tag "ejemplo.jpg", class: "card-img-top"), post %> 
+    <div class="card-body">
 
-    <p>
-      <strong>Tags:</strong>
+      <% @aa = post.title %>
+      <h5 class="card-title"><%= link_to @aa, post %></h5>
+
+      <h5 class="card-title"></h5>
+      <p class="card-text"><%= post.place %></p>
+      <p class="card-text text-muted">
         <% if post.tags.any? %>
           <% post.tags.each do |q| %>
             <%= q.name %> 
           <% end %>
         <% else %>
-          <p>Sin etiquetas</p>
-        <% end %>
-    </p>
+          <p class="card-text text-muted">Sin etiquetas</p>
+        <% end %> 
+      </p>
+    </div>
+  </div>
+
 </div>
+

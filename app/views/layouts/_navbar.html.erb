@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Fotofood.cl</a>
+    <a class="navbar-brand colorbrand" href="/">Fotofood.cl</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link 1</a>
+          <%= link_to "Nueva fotofood", new_post_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link 2</a>
@@ -22,14 +22,15 @@
           <a class="nav-link" href="#">Link 4</a>
         </li>
       </ul>
+      <div>
+          <%= link_to "Botón", root_path, class: "btn btn-primary btn-sm mb-1"  %>
+          <%= link_to "Botón", root_path, class: "btn btn-primary btn-sm mb-1"  %>
+      </div>
     </div>
-  </div>
-  <div class="d-flex">
-      <button class="btn btn-primary" type="submit">Buscar</button>
-      <button class="btn btn-primary" type="submit">Buscar</button>
   </div>
 </nav>
   <form class="d-flex">
     <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
     <button class="btn btn-outline-warning" type="submit">Buscar</button>
   </form>
+<%= image_tag "banner.gif", class: "w-100 mt-3" %>

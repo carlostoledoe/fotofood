@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: yellow"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 class="display-6 mb-2">Publica tu fotofood</h1>
+<%= link_to "Nueva fotofood", new_post_path, class: "btn btn-warning mb-4"  %>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New post", new_post_path %>
+  <div id="posts">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col">
+          <%= render post %>
+      </div>
+    <% end %>
+  </div>
