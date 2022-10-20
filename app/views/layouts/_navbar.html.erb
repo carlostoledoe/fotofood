@@ -41,5 +41,5 @@
   </form>
 <%= image_tag "banner.gif", class: "w-100 mt-3" %>
 <% if user_signed_in? %>
-  <span class="lead colorbrand" >Bienvenido: <%= current_user.email %></span>
+  <span class="lead colorbrand" >¡Hola <%= current_user.name %>!</span>
 <% end %>

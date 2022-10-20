@@ -6,7 +6,9 @@
 <% end %>
 
 <% if params[:user_id].present? %>
-  <p class="display-5">Perfil de *** </p>
+  <% @usuario = User.find_by_id(params[:user_id])%>
+  <p class="display-5">Perfil de <%= @usuario.name %> </p>
+  <p class="lead">¡Gracias por visitar el perfil de <%= @usuario.name %>!</P>
   <p class="lead">Estas son sus fotofood: </P>
 <% end %>
 
