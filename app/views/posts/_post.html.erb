@@ -1,19 +1,17 @@
 <div id="<%= dom_id post %>">
+  <% @usuario = User.find_by_id(post.user_id) %>
 
   <div class="card  mb-3" style="width: 12rem;">
     <%= link_to (image_tag "ejemplo.jpg", class: "card-img-top"), post %> 
     <div class="card-body">
-
-      <% @aa = post.title %>
-      <h5 class="card-title"><%= link_to @aa, post %></h5>
-
+      <h5 class="card-title"><%= link_to "#{post.title}", post %></h5>
       <h5 class="card-title"></h5>
       <p class="card-text"><%= post.place %></p>
-      <p class="card-text text-muted">User ID: <%= post.user_id %></p>
+      <p class="card-text text-muted">Foto de: <%= link_to "#{@usuario.email}", posts_path(user_id: post.user_id ) %></p> <%# cambiar mail por nombre %>
       <p class="card-text text-muted">
         <% if post.tags.any? %>
           <% post.tags.each do |q| %>
-            #<%= q.name %> 
+            #<%= link_to "#{q.name}", root_path, class: "text-muted"  %> <%# Cambiar por ruta de los tag %>
           <% end %>
         <% else %>
           <p class="card-text text-muted">Sin etiquetas</p>
