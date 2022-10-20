@@ -1,13 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
   <div class="container-fluid">
-    <a class="navbar-brand colorbrand" href="/">Fotofood.cl</a>
+    <%= link_to "Fotofood.cl", root_path, class: "navbar-brand colorbrand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          <%= link_to "Inicio", root_path, class: "nav-link-active" %>
+          
         </li>
         <li class="nav-item">
           <%= link_to "Nueva fotofood", new_post_path, class: "nav-link" %>
