@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /tags or /tags.json
   def index
@@ -44,7 +45,7 @@ class TagsController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
-    end
+    endbefore_action :authenticate_user!
   end
 
   # DELETE /tags/1 or /tags/1.json
