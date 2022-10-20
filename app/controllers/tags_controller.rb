@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, only: %i[ edit update destroy create new ]
 
   # GET /tags or /tags.json
   def index
