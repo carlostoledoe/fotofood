@@ -34,8 +34,10 @@
   </div>
 </nav>
   <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
-    <button class="btn btn-outline-warning" type="submit">Buscar</button>
+    <%= form_with url: posts_path, method: :get do |f| %>
+      <%= f.text_field :search, :class => "form-control me-2", placeholder: "Buscar fotofood" %>
+      <%= f.submit "Search", :class => "btn btn-outline-warning" %>
+    <% end %> 
   </form>
 <%= image_tag "banner.gif", class: "w-100 mt-3" %>
 <% if user_signed_in? %>
