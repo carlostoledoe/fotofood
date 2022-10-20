@@ -68,4 +68,5 @@ class TagsController < ApplicationController
     def tag_params
       params.require(:tag).permit(:name, :post_id)
     end
+  end
 end
