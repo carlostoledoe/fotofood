@@ -1,14 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tags</h1>
+<h1>Tags en Fotofood</h1>
+<%= link_to "Nuevo tag", new_tag_path, class: "btn btn-primary mb-3" %>
 
 <div id="tags">
   <% @tags.each do |tag| %>
     <%= render tag %>
-    <p>
-      <%= link_to "Show this tag", tag %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New tag", new_tag_path %>

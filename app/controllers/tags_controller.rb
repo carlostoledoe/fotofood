@@ -45,7 +45,7 @@ class TagsController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
-    endbefore_action :authenticate_user!
+    end
   end
 
   # DELETE /tags/1 or /tags/1.json
@@ -66,7 +66,6 @@ class TagsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tag_params
-      params.require(:tag).permit(:name, :post_id)
+      params.require(:tag).permit(:name)
     end
-  end
 end
