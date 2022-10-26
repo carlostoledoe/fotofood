@@ -6,5 +6,6 @@
 <div id="tags">
   <% @tags.each do |tag| %>
     <%= render tag %>
+    <p><%= link_to "Ver detalles", tag, class: "text-muted" %></p>
   <% end %>
 </div>
