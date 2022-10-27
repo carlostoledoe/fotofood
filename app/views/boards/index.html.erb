@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Boards</h1>
+<h1>Tus tableros</h1>
+<p class="lead" >Solo puedes ver los tableros que han sido creados por ti </p>
+<%= link_to "Crear tablero", new_board_path, class: "btn btn-warning mb-4" %>
 
 <div id="boards">
   <% @boards.each do |board| %>
     <%= render board %>
     <p>
-      <%= link_to "Show this board", board %>
+      <%= link_to "Ver este tablero", board, class: "text-muted" %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New board", new_board_path %>

@@ -1,17 +1,9 @@
 <div id="<%= dom_id board %>">
-  <p>
-    <strong>Titulo:</strong>
-    <%= board.titulo %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= board.user_id %>
-  </p>
-
-  <p>
-    <strong>Post:</strong>
-    <%= board.post_id %>
-  </p>
-
+  <div class="card">
+    <h5 class="card-header"><%= board.titulo %></h5>
+    <div class="card-body">
+      <h6 class="card-title">Post:</h6>
+      <p class="card-text"><%= board.post.title %></p>
+    </div>
+  </div>
 </div>

@@ -1,9 +1,10 @@
 class BoardsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_board, only: %i[ show edit update destroy ]
+  before_action :of_current, only: %i[ new index edit ]
 
   # GET /boards or /boards.json
   def index
-    @boards = Board.all
   end
 
   # GET /boards/1 or /boards/1.json
@@ -13,6 +14,7 @@ class BoardsController < ApplicationController
   # GET /boards/new
   def new
     @board = Board.new
+    @post = Post.all
   end
 
   # GET /boards/1/edit
@@ -66,5 +68,11 @@ class BoardsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def board_params
       params.require(:board).permit(:titulo, :user_id, :post_id)
+    end
+
+    def of_current
+      @user = current_user.try(:id)
+      @tus_post = Post.where(["user_id = ?", @user])
+      @boards = Board.where(["user_id = ?", @user])
     end
 end
