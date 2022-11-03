@@ -37,6 +37,11 @@
   </div>
 
   <div>
+    <%= form.label :photo, "Foto:", style: "display: block", class: "mt-3" %>
+    <%= form.file_field :photo, multiple: true, accept:'image/jpg,image/png,image/jpeg' %>
+  </div>
+
+  <div>
     <%= form.submit "Publicar", class: "btn btn-warning mt-4 btn-lg" %>
   </div>
 <% end %>

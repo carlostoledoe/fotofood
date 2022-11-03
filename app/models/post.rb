@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :boards, dependent: :destroy
   has_many :users, through: :boards
+  has_one_attached :photo
   
   accepts_nested_attributes_for :tags, reject_if: ->(attrs) { attrs['name'].blank? }
 
