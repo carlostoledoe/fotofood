@@ -76,3 +76,5 @@ end
 
 gem "cocoon"
 gem "devise"
+gem "aws-sdk-s3", require: false
+gem "dotenv-rails", groups: [:development, :test]
