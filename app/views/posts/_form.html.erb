@@ -1,7 +1,7 @@
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(post.errors.count, "error") %> al guardar:</h2>
 
       <ul>
         <% post.errors.each do |error| %>
@@ -37,8 +37,13 @@
   </div>
 
   <div>
-    <%= form.label :photo, "Foto:", style: "display: block", class: "mt-3" %>
-    <%= form.file_field :photo, accept:'image/jpg,image/png,image/jpeg' %>
+    <%= form.label :image, "Portada:", style: "display: block", class: "mt-4" %>
+    <%= form.file_field :image, accept:'image/jpg,image/png,image/jpeg', style: "display: block", class: "mt-1", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :photos, "Fotos adicionales (máximo 3):", style: "display: block", class: "mt-4" %>
+    <%= form.file_field :photos, multiple: true, accept:'image/jpg,image/png,image/jpeg', style: "display: block", class: "mt-1"%>
   </div>
 
   <div>

@@ -2,8 +2,9 @@
   <% @usuario = User.find_by_id(post.user_id) %>
 
   <div class="card  mb-3" style="width: 12rem;">
-    <% if post.photo.attached? %>
-      <%= link_to (image_tag post.photo, class: "card-img-top"), post %> 
+
+    <% if post.image.attached? %> <%# Imágen Portada %>
+      <%= link_to (image_tag post.image, class: "card-img-top"), post %> 
     <% else %>
       <%= link_to (image_tag "ejemplo.jpg", class: "card-img-top"), post %> 
     <% end %>

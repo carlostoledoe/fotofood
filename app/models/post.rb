@@ -3,7 +3,9 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :boards, dependent: :destroy
   has_many :users, through: :boards
-  has_one_attached :photo
+  has_many_attached :photos
+  has_one_attached :image
+  validate :validar_photos
   
   accepts_nested_attributes_for :tags, reject_if: ->(attrs) { attrs['name'].blank? }
 
@@ -20,6 +22,13 @@ class Post < ApplicationRecord
     else 
       Post.all
     end
+  end
+
+private
+  def validar_photos
+    return if photos.count <= 3
+
+    errors.add(:mensaje, ": Solo puedes subir 3 fotos adicionales")
   end
 
 end
