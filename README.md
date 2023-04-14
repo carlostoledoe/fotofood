@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Example app developed in Ruby on Rails to publish images of your food.
 
-Things you may want to cover:
+- Postgres
+- Bootstrap
+- Devise
+- AWS-S3 (for storage images)
+- Cocoon (for add tags)
+- Navbar (with search bar working)
+- Hashtag (You can click on the post and search by hashtag and by user)
+- Images: You can upload one cover image and up to three in the publication
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Deployed in Heroku: https://fotofood.herokuapp.com/ (sometimes the app is offline)
